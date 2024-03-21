@@ -190,7 +190,6 @@ if (!condition) {
       const clonedFolderPath = path.join(CURR_DIR, projectName);
       const gitFolderPath = path.join(clonedFolderPath, ".git");
       if (fs.existsSync(gitFolderPath)) {
-        // fs.rmSync(gitFolderPath, { recursive: true });
         await fs.promises.rm(gitFolderPath, { recursive: true });
       }
 
@@ -206,29 +205,34 @@ if (!condition) {
       process.exit(1); // Exit the script with an error status code
     });
 } else if (condition === "-h") {
+  // Clear the terminal by printing ANSI escape codes
+  process.stdout.write("\u001b[2J\u001b[0;0H");
+
   const message = `
-    To create a new template:
-      - Type ${chalk.green("'init'")} and press Enter at your desired location.
-    
-    To add a template:
-      - Use the ${chalk.green("-a")} flag followed by the path in quotes.
-      - ${chalk.yellow("Example:")} ${chalk.green("init -a")} ${chalk.yellow(
-    '"Path"'
+    ${chalk.bold.underline.white("Template Management Commands:")}
+
+    ${chalk.green("Create a New Template:")}
+      - Type ${chalk.cyan("'init'")} and press Enter at your desired location.
+
+    ${chalk.green("Add a Template:")}
+      - Use the ${chalk.cyan("-a")} flag followed by the path in quotes.
+      ${chalk.yellow("Example:")} ${chalk.cyan("init -a")} ${chalk.yellow(
+    '"C:Users\\User\\Desktop\\Projects\\Ongoing Projects"'
   )}
-      
-    To clone a repository and add it as a template:
-      - Use the ${chalk.green(
+
+    ${chalk.green("Clone a Repository and Add as a Template:")}
+      - Use the ${chalk.cyan(
         "-c"
       )} flag followed by the repository link in quotes.
-      - ${chalk.yellow("Example:")} ${chalk.green("init -c")} ${chalk.yellow(
-    '"Link"'
+      ${chalk.yellow("Example:")} ${chalk.cyan("init -c")} ${chalk.yellow(
+    '"https://github.com/user/repoitoryName"'
   )}
-      
-    To remove a template:
-      - Use the ${chalk.green(
+
+    ${chalk.green("Remove a Template:")}
+      - Use the ${chalk.cyan(
         "-r"
-      )} flag followed by the name of the template in quotes.
-      - ${chalk.yellow("Example:")} ${chalk.green("init -r")} ${chalk.yellow(
+      )} flag followed by the exact name of the template in quotes.
+      ${chalk.yellow("Example:")} ${chalk.cyan("init -r")} ${chalk.yellow(
     '"Template Name"'
   )}
 `;
