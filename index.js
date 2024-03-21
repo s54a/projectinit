@@ -205,12 +205,22 @@ if (!condition) {
       process.exit(1); // Exit the script with an error status code
     });
 } else if (condition === "-h") {
-  console.log(
-    "\nIf you want to Create a New Template just type 'init' & press Enter at the Location of your Choice"
-  );
-  console.log("\nIf you want to Add a Template use the '-a' Flag");
-  console.log(
-    "\nIf you want to Clone a Repository & Add it as a Template use the '-c' Flag"
-  );
-  console.log("\nIf you want to Remove a Template use the '-r' Flag");
+  const message = `
+    To create a new template:
+      - Type 'init' and press Enter at your desired location.
+    
+    To add a template:
+      - Use the '-a' flag followed by the path in quotes.
+      - Example: init -a "Path"
+    
+    To clone a repository and add it as a template:
+      - Use the '-c' flag followed by the repository link in quotes.
+      - Example: init -c "Link"
+    
+    To remove a template:
+      - Use the '-r' flag followed by the name of the template in quotes.
+      - Example: init -r "Template Name"
+`;
+
+  console.log(message);
 }
