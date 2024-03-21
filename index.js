@@ -77,7 +77,27 @@ function createDirectoryContents(templatePath, newProjectPath) {
 // Command line arguments
 const [, , condition, folderPath] = process.argv;
 
-if (condition === "-a") {
+if (!condition) {
+  inquirer.prompt(QUESTIONS).then((answers) => {
+    const projectChoice = answers["project-choice"];
+    const projectName = answers["project-name"];
+    const templatePath = path.join(__dirname, "templates", projectChoice);
+    const projectPath = path.join(CURR_DIR, projectName);
+
+    // Create project directory if it doesn't exist
+    if (!fs.existsSync(projectPath)) {
+      fs.mkdirSync(projectPath);
+    } else {
+      console.log(`\nProject directory '${projectName}' already exists.`);
+      {
+        process.exit(1);
+      }
+    }
+
+    createDirectoryContents(templatePath, projectName);
+    console.log("\nTemplate successfully created.");
+  });
+} else if (condition === "-a") {
   // Validate folder path
   if (!folderPath) {
     console.error("\nError: provide a folder path.");
@@ -113,26 +133,6 @@ if (condition === "-a") {
 
   // InformSync user about successful operation
   console.log("\nTemplate successfully created.");
-} else if (!condition) {
-  inquirer.prompt(QUESTIONS).then((answers) => {
-    const projectChoice = answers["project-choice"];
-    const projectName = answers["project-name"];
-    const templatePath = path.join(__dirname, "templates", projectChoice);
-    const projectPath = path.join(CURR_DIR, projectName);
-
-    // Create project directory if it doesn't exist
-    if (!fs.existsSync(projectPath)) {
-      fs.mkdirSync(projectPath);
-    } else {
-      console.log(`\nProject directory '${projectName}' already exists.`);
-      {
-        process.exit(1);
-      }
-    }
-
-    createDirectoryContents(templatePath, projectName);
-    console.log("\nTemplate successfully created.");
-  });
 } else if (condition === "-r") {
   const templateToRemove = process.argv[3];
 
