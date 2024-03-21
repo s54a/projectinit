@@ -209,7 +209,7 @@ if (!condition) {
   process.stdout.write("\u001b[2J\u001b[0;0H");
 
   const message = `
-    ${chalk.bold.underline.white("Template Management Commands:")}
+${chalk.bold.underline.white("Package Commands:")}
 
     ${chalk.green("Create a New Template:")}
       - Type ${chalk.cyan("'init'")} and press Enter at your desired location.
@@ -217,7 +217,7 @@ if (!condition) {
     ${chalk.green("Add a Template:")}
       - Use the ${chalk.cyan("-a")} flag followed by the path in quotes.
       ${chalk.yellow("Example:")} ${chalk.cyan("init -a")} ${chalk.yellow(
-    '"C:Users\\User\\Desktop\\Projects\\Ongoing Projects"'
+    '"C:Users\\{User}\\Desktop\\Projects\\Ongoing Projects"'
   )}
 
     ${chalk.green("Clone a Repository and Add as a Template:")}
@@ -229,12 +229,15 @@ if (!condition) {
   )}
 
     ${chalk.green("Remove a Template:")}
-      - Use the ${chalk.cyan(
-        "-r"
-      )} flag followed by the exact name of the template in quotes.
+    - Use the ${chalk.cyan(
+      "-r"
+    )} flag followed by the exact name of the template in quotes.
       ${chalk.yellow("Example:")} ${chalk.cyan("init -r")} ${chalk.yellow(
     '"Template Name"'
   )}
+        
+    ${chalk.green("Help:")}
+    - Use ${chalk.cyan("init -h")} to see help.
 `;
 
   console.log(message);
