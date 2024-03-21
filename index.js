@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { execSync } from "child_process";
+import chalk from "chalk";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CHOICES = fs.readdirSync(path.join(__dirname, "templates"));
@@ -207,19 +208,29 @@ if (!condition) {
 } else if (condition === "-h") {
   const message = `
     To create a new template:
-      - Type 'init' and press Enter at your desired location.
+      - Type ${chalk.green("'init'")} and press Enter at your desired location.
     
     To add a template:
-      - Use the '-a' flag followed by the path in quotes.
-      - Example: init -a "Path"
-    
+      - Use the ${chalk.green("-a")} flag followed by the path in quotes.
+      - ${chalk.yellow("Example:")} ${chalk.green("init -a")} ${chalk.yellow(
+    '"Path"'
+  )}
+      
     To clone a repository and add it as a template:
-      - Use the '-c' flag followed by the repository link in quotes.
-      - Example: init -c "Link"
-    
+      - Use the ${chalk.green(
+        "-c"
+      )} flag followed by the repository link in quotes.
+      - ${chalk.yellow("Example:")} ${chalk.green("init -c")} ${chalk.yellow(
+    '"Link"'
+  )}
+      
     To remove a template:
-      - Use the '-r' flag followed by the name of the template in quotes.
-      - Example: init -r "Template Name"
+      - Use the ${chalk.green(
+        "-r"
+      )} flag followed by the name of the template in quotes.
+      - ${chalk.yellow("Example:")} ${chalk.green("init -r")} ${chalk.yellow(
+    '"Template Name"'
+  )}
 `;
 
   console.log(message);
