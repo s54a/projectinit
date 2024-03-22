@@ -204,7 +204,7 @@ if (!condition) {
       console.error("Error cloning repository:", error);
       process.exit(1); // Exit the script with an error status code
     });
-} else if (condition === "-h") {
+} else if (condition === "h") {
   // Clear the terminal by printing ANSI escape codes
   process.stdout.write("\u001b[2J\u001b[0;0H");
 
@@ -217,7 +217,7 @@ ${chalk.bold.underline.white("Package Commands:")}
     ${chalk.green("Add a Template:")}
       - Use the ${chalk.cyan("-a")} flag followed by the path in quotes.
       ${chalk.yellow("Example:")} ${chalk.cyan("init -a")} ${chalk.yellow(
-    '"C:Users\\{User}\\Desktop\\Projects\\Ongoing Projects"'
+    '"C:\\Users\\{User}\\Desktop\\Projects\\Ongoing Projects"'
   )}
 
     ${chalk.green("Clone a Repository and Add as a Template:")}
@@ -241,4 +241,24 @@ ${chalk.bold.underline.white("Package Commands:")}
 `;
 
   console.log(message);
+} else if (condition) {
+  console.log(
+    chalk.red(
+      `
+      Invalid command: "${condition}".
+      
+      Please use one of the supported commands.
+      
+      Run ${chalk.yellow("init -h")} to see help.
+      
+      `
+    )
+  );
+} else {
+  console.log(
+    chalk.red(
+      `An error occurred or an invalid command was provided.
+      Run ${chalk.yellow("init -h")} to see help.`
+    )
+  );
 }
