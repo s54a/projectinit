@@ -4,7 +4,7 @@ I built this project cause I was creating templates while starting a new project
 
 ## Folder Structure
 
-there is only 1 for testing which has three files
+There is only 1 for testing which has three files
 I didn't add any more template cause I didn"t wanted to bloat the package
 
     📁 init
@@ -48,7 +48,7 @@ init -a "C:\Users\{User}\Desktop\Projects\Ongoing Projects"
 
 Upon execution, the tool generates a new folder path containing the contents of the user-created template. Subsequently, when the init command is invoked, it showcases the recently created template under the specified name.
 
-_Tip_: For Windows users, you can quickly access the folder by selecting it and then pressing `ctrl + shift + c.`
+_Tip_: For Windows users, you can quickly access the folder by selecting it and then pressing `ctrl + shift + c`.
 
 **Templates can be removed using the following command:**
 
