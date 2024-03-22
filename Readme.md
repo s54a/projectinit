@@ -1,6 +1,6 @@
 # @s54a/init
 
-I built this project cause I was didn't wanted to create templates times while starting a new project.
+I built this project cause I was creating templates while starting a new project & I thought there must be a better way to do this
 
 ## Folder Structure
 
