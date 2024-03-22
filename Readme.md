@@ -4,9 +4,6 @@ I built this project cause I was creating templates while starting a new project
 
 ## Folder Structure
 
-There is only 1 for testing which has three files
-I didn't add any more template cause I didn"t wanted to bloat the package
-
     📁 init
     ├── 🌅 images
     │   ├── 🖼️ article.png
@@ -28,7 +25,9 @@ I didn't add any more template cause I didn"t wanted to bloat the package
     ├── 📋 package.json
     └── 📋 package-lock.json
 
-###### (Note ChatGPT built this folder structure)
+For testing purposes, only one template has been included, consisting of three files _(HTML, CSS & JS)_. Additional templates have not been added to avoid making the package unnecessarily large.
+
+_(Note ChatGPT built this folder structure)_
 
 ## How it Works
 
