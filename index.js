@@ -204,7 +204,7 @@ if (!condition) {
       console.error("Error cloning repository:", error);
       process.exit(1); // Exit the script with an error status code
     });
-} else if (condition === "h") {
+} else if (condition === "-h") {
   // Clear the terminal by printing ANSI escape codes
   process.stdout.write("\u001b[2J\u001b[0;0H");
 
@@ -238,6 +238,12 @@ ${chalk.bold.underline.white("Package Commands:")}
         
     ${chalk.green("Help:")}
     - Use ${chalk.cyan("init -h")} to see help.
+
+
+    Made By Sooraj Gupta
+    Email : soorajgupta00@gmail.com
+    Github Repository : https://github.com/s54a/s54a-init
+
 `;
 
   console.log(message);
