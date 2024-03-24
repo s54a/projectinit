@@ -2,6 +2,10 @@
 
 When I was starting a new project, I used the 'create vite app' command. Then, I began to remove and add files for the project. It struck me that I could create it once and paste it everywhere when I start a new project. Thats how I started building this.
 
+_There are two branch of this project in this one I have removed images & a few files to reduce the size_
+
+_Visit the Github Readme to see examples_
+
 ## How it Works
 
 The package stores Templates inside a folder called "Templates" then when you run the `init` command it displays the templates and then it will paste the folder at the location where the terminal is open.
@@ -11,7 +15,6 @@ _Simply it just copies & pastes the Folders from one place to another_
 ## Folder Structure
 
     📁 init
-    ├── 🌅 images
     │   ├── 🖼️ article.png
     │   ├── 🖼️ init -a.png
     │   ├── 🖼️ init -c.png
@@ -43,10 +46,6 @@ To begin, open a terminal at the desired project location and run this command
 init
 ```
 
-##### Example
-
-![init](./images/init.png)
-
 This displays all available templates from the template folder, listed by folder name. Choose a template and enter the desired folder name when prompted to create a new project with the selected template's contents.
 
 **Users can also create templates themselves by running:**
@@ -54,10 +53,6 @@ This displays all available templates from the template folder, listed by folder
 ```bash
 init -a "C:\Users\{User}\Desktop\Projects\Ongoing Projects"
 ```
-
-##### Example
-
-![init](./images/init%20-a.png)
 
 Upon execution, the tool generates a new folder path containing the contents of the user-created template. Subsequently, when the init command is invoked, it showcases the recently created template under the specified name.
 
@@ -69,10 +64,6 @@ _Tip_: For Windows users, you can quickly access the folder by selecting it and 
 init -r "template name"
 ```
 
-##### Example
-
-![init](./images/init%20-r.png)
-
 _(Note: The name must match exactly.)_
 
 **Templates can also be added from GitHub with:**
@@ -80,10 +71,6 @@ _(Note: The name must match exactly.)_
 ```bash
 init -c "https://github.com/user/repoitoryName"
 ```
-
-##### Example
-
-![init](./images/init%20-c.png)
 
 This process involves cloning the repository into the current terminal directory, removing the .git folder from the cloned repository, executing the init -a "repoName" command to create a copy in the templates folder, and then deleting the cloned repository folder from the current terminal location.
 
@@ -95,10 +82,6 @@ The reason it performs all these steps is because I attempted to accomplish it i
 init -h
 ```
 
-##### Example
-
-![init](./images/init%20-h.png)
-
 ## Don'ts
 
 Make Sure you are **node_modules** are not installed when you create a template.
@@ -107,7 +90,7 @@ Make Sure you are **node_modules** are not installed when you create a template.
 
 #### These are the YouTube Videos & Article which helped me build this
 
-[![The Articel Link](./images/article.png)](https://medium.com/northcoders/creating-a-project-generator-with-node-29e13b3cd309)
+[Harriet Ryder's The Article Link](https://medium.com/northcoders/creating-a-project-generator-with-node-29e13b3cd309)
 
 [![The Video Link](https://img.youtube.com/vi/xYko2bHNgVA/0.jpg)](https://www.youtube.com/watch?v=xYko2bHNgVA)
 
@@ -352,7 +335,6 @@ ${chalk.bold.underline.white("Package Commands:")}
 
     ${chalk.green("Add a Template:")}
       - Use the ${chalk.cyan("-a")} flag followed by the path in quotes.
-      ${chalk.yellow("Example:")} ${chalk.cyan("init -a")} ${chalk.yellow(
     '"C:\\Users\\{User}\\Desktop\\Projects\\Ongoing Projects"'
   )}
 
@@ -360,7 +342,6 @@ ${chalk.bold.underline.white("Package Commands:")}
       - Use the ${chalk.cyan(
         "-c"
       )} flag followed by the repository link in quotes.
-      ${chalk.yellow("Example:")} ${chalk.cyan("init -c")} ${chalk.yellow(
     '"https://github.com/user/repoitoryName"'
   )}
 
@@ -368,7 +349,6 @@ ${chalk.bold.underline.white("Package Commands:")}
     - Use the ${chalk.cyan(
       "-r"
     )} flag followed by the exact name of the template in quotes.
-      ${chalk.yellow("Example:")} ${chalk.cyan("init -r")} ${chalk.yellow(
     '"Template Name"'
   )}
         
