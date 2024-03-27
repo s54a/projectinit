@@ -1,6 +1,6 @@
 # @s54a/init
 
-When I was starting a new project, I used the 'create vite app' command. Then, I began to remove and add files for the project. It struck me that I could create it once and paste it everywhere when I start a new project. Thats how I started building this.
+When I was starting a new project, I used the 'create vite app' command. Then, I began to remove & edit content of files for the project & I got the idea that I could create it once and paste it everywhere when I start a new project. Thats how I started building this.
 
 ## How it Works
 
@@ -34,6 +34,16 @@ _Simply it just copies & pastes the Folders from one place to another_
 For testing purposes, only one template has been included, consisting of three files _(HTML, CSS & JS)_. Additional templates have not been added to avoid making the package unnecessarily large.
 
 _(Note ChatGPT built this folder structure)_
+
+## Installation
+
+This package provides an Executable Command
+
+You will have to install this package globally to be able to use the `init` command.
+
+```bash
+npm install -g @s54a/init
+```
 
 ## Usage
 
@@ -122,6 +132,44 @@ Extra Resources
 https://github.com/lirantal/nodejs-cli-apps-best-practices
 
 Take a look at https://yeoman.io/generators/
+
+## Why I is made this:
+
+When you start Learning to code you will create multiple new projects so every time you will have to create new files
+
+e.g. index.html, style.css, app.js
+
+When you will advance to React you will do
+
+```bash
+npm create-react-app ProjectName
+```
+
+or
+
+```bash
+npm create-vite-app ProjectName
+```
+
+So every time you will do that you will have to remove files edit content of the files.
+
+So I thought it is a hassel so lets just do it once and I wil copy & paste it every time whenever I start a new project.
+
+Then I thought I can create a cli which does that for me & I started building this package.
+
+Then on a suggestion of a friend I also added the Clone & Create Template from Github Feature.
+
+## How I use this Package
+
+I use this Package whenever I start a new porject.
+
+I have created my own template and added them as templates using `init -a "folder path"` command.
+
+I have also added templates on Github.
+
+So if I am on a new device or format my current one so I can just run the `init -c "github_url"` command after installing the package to clone new project and create a new template.
+
+So if you are a Freelancer or Someone who is learning to code, or starting a new Project you can use this.
 
 ## Source Code
 
