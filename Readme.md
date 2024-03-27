@@ -133,7 +133,7 @@ https://github.com/lirantal/nodejs-cli-apps-best-practices
 
 Take a look at https://yeoman.io/generators/
 
-## Why I made this:
+## Why I made this
 
 When you start Learning to code you will create multiple new projects so every time you will have to create new files
 
