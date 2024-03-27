@@ -1,6 +1,6 @@
 {
   "name": "@s54a/init",
-  "version": "3.2.10",
+  "version": "3.2.11",
   "description": "Project Initializer",
   "main": "./index.js",
   "type": "module",

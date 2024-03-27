@@ -241,7 +241,7 @@ ${chalk.bold.underline.white("Package Commands:")}
 
 
     Made By Sooraj Gupta
-    Email : https://github.com/s54a/s54a-init
+    Email : soorajgupta00@gmail.com
     Github Repository : https://github.com/s54a/s54a-init
 
 `;
