@@ -31,6 +31,16 @@ const QUESTIONS = [
 
 const CURR_DIR = process.cwd();
 
+let nodeFlag = false; // Set nodeFlag as a global variable with a default value of false
+
+// Command line arguments
+const [, , condition, folderPath, nodeFlagParam] = process.argv;
+
+// Update the value of nodeFlag based on the command line argument
+if (nodeFlagParam === "-y") {
+  nodeFlag = true;
+}
+
 function createDirectoryContents(templatePath, newProjectPath) {
   const filesToCreate = fs.readdirSync(templatePath);
 
@@ -61,7 +71,11 @@ function createDirectoryContents(templatePath, newProjectPath) {
       }
     } else if (stats.isDirectory()) {
       if (condition === "-a") {
-        fs.mkdirSync(path.join(__dirname, "templates", newProjectPath, file));
+        if (file === "node_modules" && !nodeFlag) {
+          return;
+        } else {
+          fs.mkdirSync(path.join(__dirname, "templates", newProjectPath, file));
+        }
       } else {
         fs.mkdirSync(path.join(CURR_DIR, newProjectPath, file));
       }
@@ -74,9 +88,6 @@ function createDirectoryContents(templatePath, newProjectPath) {
     }
   });
 }
-
-// Command line arguments
-const [, , condition, folderPath] = process.argv;
 
 if (!condition) {
   inquirer.prompt(QUESTIONS).then((answers) => {
@@ -133,7 +144,11 @@ if (!condition) {
   createDirectoryContents(folderPath, projectName);
 
   // InformSync user about successful operation
-  console.log("\nTemplate successfully created.");
+  if (nodeFlag) {
+    console.log("\nTemplate successfully created with node_modules.");
+  } else {
+    console.log("\nTemplate successfully created.");
+  }
 } else if (condition === "-r") {
   const templateToRemove = process.argv[3];
 

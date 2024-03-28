@@ -59,6 +59,16 @@ Upon execution, the tool generates a new folder path containing the contents of 
 
 _Tip_: For Windows users, you can quickly access the folder by selecting it and then pressing `ctrl + shift + c`.
 
+**By Default when you create a Template it skips the `node_modules` folder and its contents.**
+
+_But for reason you want to create a template with `node_modules` folder you will have to pass the `-y` flag._
+
+Example:
+
+```bash
+init -a "O:\test\cliTest" -y
+```
+
 **Templates can be removed using the following command:**
 
 ```bash
@@ -189,6 +199,16 @@ const QUESTIONS = [
 
 const CURR_DIR = process.cwd();
 
+let nodeFlag = false; // Set nodeFlag as a global variable with a default value of false
+
+// Command line arguments
+const [, , condition, folderPath, nodeFlagParam] = process.argv;
+
+// Update the value of nodeFlag based on the command line argument
+if (nodeFlagParam === "-y") {
+  nodeFlag = true;
+}
+
 function createDirectoryContents(templatePath, newProjectPath) {
   const filesToCreate = fs.readdirSync(templatePath);
 
@@ -219,7 +239,11 @@ function createDirectoryContents(templatePath, newProjectPath) {
       }
     } else if (stats.isDirectory()) {
       if (condition === "-a") {
-        fs.mkdirSync(path.join(__dirname, "templates", newProjectPath, file));
+        if (file === "node_modules" && !nodeFlag) {
+          return;
+        } else {
+          fs.mkdirSync(path.join(__dirname, "templates", newProjectPath, file));
+        }
       } else {
         fs.mkdirSync(path.join(CURR_DIR, newProjectPath, file));
       }
@@ -232,9 +256,6 @@ function createDirectoryContents(templatePath, newProjectPath) {
     }
   });
 }
-
-// Command line arguments
-const [, , condition, folderPath] = process.argv;
 
 if (!condition) {
   inquirer.prompt(QUESTIONS).then((answers) => {
@@ -374,6 +395,7 @@ ${chalk.bold.underline.white("Package Commands:")}
 
     ${chalk.green("Add a Template:")}
       - Use the ${chalk.cyan("-a")} flag followed by the path in quotes.
+      ${chalk.yellow("Example:")} ${chalk.cyan("init -a")} ${chalk.yellow(
     '"C:\\Users\\{User}\\Desktop\\Projects\\Ongoing Projects"'
   )}
 
@@ -381,6 +403,7 @@ ${chalk.bold.underline.white("Package Commands:")}
       - Use the ${chalk.cyan(
         "-c"
       )} flag followed by the repository link in quotes.
+      ${chalk.yellow("Example:")} ${chalk.cyan("init -c")} ${chalk.yellow(
     '"https://github.com/user/repoitoryName"'
   )}
 
@@ -388,6 +411,7 @@ ${chalk.bold.underline.white("Package Commands:")}
     - Use the ${chalk.cyan(
       "-r"
     )} flag followed by the exact name of the template in quotes.
+      ${chalk.yellow("Example:")} ${chalk.cyan("init -r")} ${chalk.yellow(
     '"Template Name"'
   )}
         
@@ -396,7 +420,7 @@ ${chalk.bold.underline.white("Package Commands:")}
 
 
     Made By Sooraj Gupta
-    Email : https://github.com/s54a/s54a-init
+    Email : soorajgupta00@gmail.com
     Github Repository : https://github.com/s54a/s54a-init
 
 `;
