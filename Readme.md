@@ -433,7 +433,7 @@ ${chalk.bold.underline.white("Package Commands:")}
       )} flag after the command.
       ${chalk.yellow("Example:")} ${chalk.cyan("init -a")} ${chalk.yellow(
     '"C:\\Users\\{User}\\Desktop\\Projects\\Ongoing Projects"'
-  )}${chalk.cyan("-y")}
+  )} ${chalk.cyan("-y")}
 
     ${chalk.green("Clone a Repository and Add as a Template:")}
       - Use the ${chalk.cyan(
