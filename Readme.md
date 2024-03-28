@@ -77,11 +77,13 @@ _Tip_: For Windows users, you can quickly access the folder by selecting it and 
 
 _But for reason you want to create a template with `node_modules` folder you will have to pass the `-y` flag._
 
-Example:
+##### Example
 
 ```bash
 init -a "O:\test\cliTest" -y
 ```
+
+![init](./images/init%20-y.png)
 
 **Templates can be removed using the following command:**
 
