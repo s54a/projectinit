@@ -63,7 +63,7 @@ _Tip_: For Windows users, you can quickly access the folder by selecting it and 
 
 _But for reason you want to create a template with `node_modules` folder you will have to pass the `-y` flag._
 
-Example:
+##### Example
 
 ```bash
 init -a "O:\test\cliTest" -y
@@ -92,10 +92,6 @@ The reason it performs all these steps is because I attempted to accomplish it i
 ```bash
 init -h
 ```
-
-## Don'ts
-
-Make Sure you are **node_modules** are not installed when you create a template.
 
 ## Resources
 
