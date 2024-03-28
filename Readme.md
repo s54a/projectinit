@@ -121,10 +121,6 @@ init -h
 
 ![init](./images/init%20-h.png)
 
-## Don'ts
-
-Make Sure you are **node_modules** are not installed when you create a template.
-
 ## Resources
 
 #### These are the YouTube Videos & Article which helped me build this
