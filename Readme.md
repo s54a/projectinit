@@ -228,6 +228,53 @@ let nodeFlag = false; // Set nodeFlag as a global variable with a default value 
 // Command line arguments
 const [, , condition, folderPath, nodeFlagParam] = process.argv;
 
+const [, , ...args] = process.argv;
+
+const options = {
+  condition: null,
+  folderPath: null,
+  nodeFlagParam: "",
+};
+
+// Parse command line arguments
+for (let i = 0; i < args.length; i++) {
+  const arg = args[i];
+  switch (arg) {
+    case "-a":
+    case "-r":
+    case "-c":
+      options.condition = arg;
+      break;
+    case "-h":
+      options.condition = arg;
+      options.folderPath = "";
+      break;
+    case "-y":
+      // Check if the previous option was '-a'
+      if (options.condition === "-a") {
+        options.nodeFlagParam = arg;
+      } else {
+        console.error(`Invalid usage of '-y' flag.`);
+        process.exit(1);
+      }
+      break;
+    default:
+      if (arg.startsWith("-")) {
+        console.error(`Invalid option: ${arg}`);
+        process.exit(1);
+      } else {
+        options.folderPath = arg;
+      }
+      break;
+  }
+}
+
+// Check for unsupported or invalid options
+if (Object.values(options).some((value) => value === null)) {
+  console.error(`Missing required option or invalid usage.`);
+  process.exit(1);
+}
+
 // Update the value of nodeFlag based on the command line argument
 if (nodeFlagParam === "-y") {
   nodeFlag = true;
@@ -405,7 +452,11 @@ if (!condition) {
       await runCommand(initCommand);
 
       // Remove the cloned project folder asynchronously
-      await fs.promises.rm(clonedFolderPath, { recursive: true });
+      try {
+        await fs.promises.rm(clonedFolderPath, { recursive: true });
+      } catch (error) {
+        console.error(`Failed to remove cloned folder: ${error}`);
+      }
     })
     .catch((error) => {
       console.error("Error cloning repository:", error);
@@ -490,7 +541,7 @@ ${chalk.bold.underline.white("Package Commands:")}
 ```json
 {
   "name": "@s54a/init",
-  "version": "3.2.5",
+  "version": "4.0.0",
   "description": "Project Initializer",
   "main": "./index.js",
   "type": "module",
