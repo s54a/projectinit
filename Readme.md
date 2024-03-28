@@ -308,7 +308,11 @@ if (!condition) {
   createDirectoryContents(folderPath, projectName);
 
   // InformSync user about successful operation
-  console.log("\nTemplate successfully created.");
+  if (nodeFlag) {
+    console.log("\nTemplate successfully created with node_modules.");
+  } else {
+    console.log("\nTemplate successfully created.");
+  }
 } else if (condition === "-r") {
   const templateToRemove = process.argv[3];
 
@@ -390,10 +394,18 @@ ${chalk.bold.underline.white("Package Commands:")}
       - Type ${chalk.cyan("'init'")} and press Enter at your desired location.
 
     ${chalk.green("Add a Template:")}
-      - Use the ${chalk.cyan("-a")} flag followed by the path in quotes.
+      - Use the ${chalk.cyan(
+        "-a"
+      )} flag followed by the path in quotes. By default it skips the node_modules folder.
       ${chalk.yellow("Example:")} ${chalk.cyan("init -a")} ${chalk.yellow(
     '"C:\\Users\\{User}\\Desktop\\Projects\\Ongoing Projects"'
   )}
+      - But if you want to add node_modules folder with the template you are creating then ${chalk.cyan(
+        "-y"
+      )} flag after the command.
+      ${chalk.yellow("Example:")} ${chalk.cyan("init -a")} ${chalk.yellow(
+    '"C:\\Users\\{User}\\Desktop\\Projects\\Ongoing Projects"'
+  )}${chalk.cyan("-y")}
 
     ${chalk.green("Clone a Repository and Add as a Template:")}
       - Use the ${chalk.cyan(
