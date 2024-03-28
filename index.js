@@ -238,8 +238,7 @@ ${chalk.bold.underline.white("Package Commands:")}
   )}
       - But if you want to add node_modules folder with the template you are creating then ${chalk.cyan(
         "-y"
-      )} 
-      flag after the command.
+      )} flag after the command.
       ${chalk.yellow("Example:")} ${chalk.cyan("init -a")} ${chalk.yellow(
     '"C:\\Users\\{User}\\Desktop\\Projects\\Ongoing Projects"'
   )} ${chalk.cyan("-y")}
