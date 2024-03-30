@@ -276,6 +276,11 @@ for (let i = 0; i < args.length; i++) {
   }
 }
 
+if (!args.length) {
+  options.condition = "";
+  options.folderPathOrNameOrLink = "";
+}
+
 // Check for unsupported or invalid options
 if (Object.values(options).some((value) => value === null)) {
   console.error(`Missing required option or invalid usage.`);
@@ -558,7 +563,7 @@ ${chalk.bold.underline.white("Package Commands:")}
 ```json
 {
   "name": "@s54a/init",
-  "version": "4.2.0",
+  "version": "4.5.0",
   "description": "Project Initializer",
   "main": "./index.js",
   "type": "module",

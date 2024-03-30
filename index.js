@@ -77,6 +77,11 @@ for (let i = 0; i < args.length; i++) {
   }
 }
 
+if (!args.length) {
+  options.condition = "";
+  options.folderPathOrNameOrLink = "";
+}
+
 // Check for unsupported or invalid options
 if (Object.values(options).some((value) => value === null)) {
   console.error(`Missing required option or invalid usage.`);
