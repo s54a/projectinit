@@ -1,6 +1,6 @@
 {
   "name": "@s54a/init",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Project Initializer",
   "main": "./index.js",
   "type": "module",
@@ -15,6 +15,7 @@
     "url": "git+https://github.com/s54a/s54a-init.git"
   },
   "keywords": [
+    "Template CLI",
     "Project Initializer",
     "Initializer",
     "Init"
