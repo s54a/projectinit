@@ -12,6 +12,10 @@ The package stores Templates inside a folder called "Templates" then when you ru
 
 _Simply it just copies & pastes the Folders from one place to another_
 
+## Video Tutorial
+
+[![Video Tutorial](https://img.youtube.com/vi/fmWuOmyIZLc/sddefault.jpg)](https://www.youtube.com/watch?v=fmWuOmyIZLc)
+
 ## Folder Structure
 
     📁 init
@@ -120,7 +124,7 @@ https://github.com/lirantal/nodejs-cli-apps-best-practices
 
 Take a look at https://yeoman.io/generators/
 
-## Why I made this
+## Why I Created this
 
 When you start Learning to code you will create multiple new projects so every time you will have to create new files
 
@@ -157,6 +161,20 @@ I have also added templates on Github.
 So if I am on a new device or format my current one so I can just run the `init -c "github_url"` command after installing the package to clone new project and create a new template.
 
 So if you are a Freelancer or Someone who is learning to code, or starting a new Project you can use this.
+
+## Extra Info
+
+While Deploying Packages on NPM I realized that whatever you have in your project will get included even if you use npm ignore.
+I dont know if npm ignore works or failed.
+So I created another branch of this project in which I removed images and extra files.
+To reduce the size of the package & the node_modules size.
+
+Here is the difference
+
+![size difference](./images/big.png)
+![size difference](./images/small.png)
+
+**So the Pacakge Size is reduced by 300 Kilo Bytes**
 
 ## Source Code
 
@@ -535,7 +553,7 @@ ${chalk.bold.underline.white("Package Commands:")}
 ```json
 {
   "name": "@s54a/init",
-  "version": "4.5.0",
+  "version": "5.0.0",
   "description": "Project Initializer",
   "main": "./index.js",
   "type": "module",
