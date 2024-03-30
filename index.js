@@ -40,7 +40,7 @@ const [, , ...args] = process.argv;
 
 const options = {
   condition: null,
-  folderPath: null,
+  folderPathOrNameOrLink: null,
   nodeFlagParam: "",
 };
 
@@ -55,7 +55,7 @@ for (let i = 0; i < args.length; i++) {
       break;
     case "-h":
       options.condition = arg;
-      options.folderPath = "";
+      options.folderPathOrNameOrLink = "";
       break;
     case "-y":
       // Check if the previous option was '-a'
@@ -71,7 +71,7 @@ for (let i = 0; i < args.length; i++) {
         console.error(`Invalid option: ${arg}`);
         process.exit(1);
       } else {
-        options.folderPath = arg;
+        options.folderPathOrNameOrLink = arg;
       }
       break;
   }
@@ -230,7 +230,17 @@ if (!condition) {
     });
   };
 
+  const urlRegex =
+    /^(https?|ftp):\/\/(([a-z\d]([a-z\d-]*[a-z\d])?\.)+[a-z]{2,}|localhost)(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(\#[-a-z\d_]*)?$/i;
+
   const repoLink = process.argv[3];
+
+  if (!urlRegex.test(repoLink)) {
+    console.log("Invalid repository link provided.");
+    process.exit(1);
+  } else {
+    console.log("Repository link is valid.");
+  }
   const gitCommand = `git clone --depth 1 ${repoLink}`;
   let projectName;
 
