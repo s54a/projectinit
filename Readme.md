@@ -1,6 +1,10 @@
-# @s54a/init
+# @s54a/init || TempLate CLI || Project Initializer
 
-When I was starting a new project, I used the 'create vite app' command. Then, I began to remove & edit content of files for the project & I got the idea that I could create it once and paste it everywhere when I start a new project. Thats how I started building this.
+When I was starting a new project, I used the 'create vite app' command. Then, I began to remove and add files for the project. It struck me that I could create it once and paste it everywhere when I start a new project. Thats how I started building this.
+
+_There are two branch of this project in this one I have removed images & a few files to reduce the size_
+
+_Visit the NPM Readme to see examples_
 
 ## How it Works
 
@@ -81,11 +85,11 @@ _Tip_: For Windows users, you can quickly access the folder by selecting it and 
 
 _But for reason you want to create a template with `node_modules` folder you will have to pass the `-y` flag._
 
-##### Example
-
 ```bash
 init -a "O:\test\cliTest" -y
 ```
+
+##### Example
 
 ![init](./images/init%20-y.png)
 
