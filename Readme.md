@@ -37,7 +37,7 @@ _(Note ChatGPT built this folder structure)_
 
 This package provides an Executable Command
 
-You will have to install this package globally to be able to use the init command.
+You will have to install this package globally to be able to use the `init` command.
 
 ```bash
 npm install -g @s54a/init
@@ -66,8 +66,6 @@ _Tip_: For Windows users, you can quickly access the folder by selecting it and 
 **By Default when you create a Template it skips the `node_modules` folder and its contents.**
 
 _But for reason you want to create a template with `node_modules` folder you will have to pass the `-y` flag._
-
-##### Example
 
 ```bash
 init -a "O:\test\cliTest" -y
