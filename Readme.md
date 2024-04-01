@@ -152,13 +152,11 @@ https://github.com/lirantal/nodejs-cli-apps-best-practices
 
 Take a look at https://yeoman.io/generators/
 
-## Why I Created this
+## Read this if you are a begginer
 
-When you start Learning to code you will create multiple new projects so every time you will have to create new files
+I asked one of my friend who is a begginer in Web Dev. She asked me a question how will I make templates or why use this instead of **Copy Pasting**
 
-e.g. index.html, style.css, app.js
-
-When you will advance to React you will do
+So when ever you do
 
 ```bash
 npm create-react-app ProjectName
@@ -169,6 +167,43 @@ or
 ```bash
 npm create-vite-app ProjectName
 ```
+
+These files are generated (with create react app)
+
+    my-app/
+    ├── README.md
+    ├── node_modules/
+    ├── package.json
+    ├── .gitignore
+    ├── public/
+    │   ├── favicon.ico
+    │   ├── index.html
+    │   ├── manifest.json
+    │   └── robots.txt
+    └── src/
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── index.css
+    ├── index.js
+    └── logo.svg
+
+As you can see there are so many files which aren't necessary so you will have to remove these files remove code from `index.css` or maybe more files.
+
+So you can do this once and use this template by using this package or just copy paste.
+
+**So why use this package instead of copy pasting**
+So assume you have created many templates now you will create a folder to store them and every time you will start a new project you will have to go to that location copy that file and paste it at the location where you are starting the project and then change the name.
+
+So this package does all that when you create a template and add it as a template from Command Line Interface and what I have learned & heard is **that you will much faster at things with CLI then GUI**.
+
+## Why I Created this
+
+When you start Learning to code you will create multiple new projects so every time you will have to create new files
+
+e.g. index.html, style.css, app.js
+
+When you will advance to React you will do
 
 So every time you will do that you will have to remove files edit content of the files.
 
