@@ -1,3 +1,8 @@
+---
+gitea: none
+include_toc: true
+---
+
 # @s54a/init || TempLate CLI || Project Initializer
 
 When I was starting a new project, I used the 'create vite app' command. Then, I began to remove and add files for the project. It struck me that I could create it once and paste it everywhere when I start a new project. Thats how I started building this.
