@@ -1,28 +1,33 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
+
+- [@s54a/init || TempLate CLI || Project Initializer](#s54ainit--template-cli--project-initializer)
+  - [How it Works](#how-it-works)
+  - [Video Tutorial](#video-tutorial)
+  - [Folder Structure](#folder-structure)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Example](#example)
+    - [Example](#example-1)
+    - [Example](#example-2)
+    - [Example](#example-3)
+    - [Example](#example-4)
+    - [Example](#example-5)
+  - [Resources](#resources)
+    - [These are the YouTube Videos & Article which helped me build this](#these-are-the-youtube-videos--article-which-helped-me-build-this)
+  - [Read this if you are a begginer](#read-this-if-you-are-a-begginer)
+  - [Why I Created this](#why-i-created-this)
+  - [How I use this Package](#how-i-use-this-package)
+  - [Extra Info](#extra-info)
+  - [Source Code](#source-code)
+    - [index.js](#indexjs)
+    - [package.json](#packagejson)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # @s54a/init || TempLate CLI || Project Initializer
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [How it Works](#how-it-works)
-- [Video Tutorial](#video-tutorial)
-- [Folder Structure](#folder-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Example1](#example1)
-  - [Example2](#example2)
-  - [Example3](#example3)
-  - [Example4](#example4)
-  - [Example5](#example5)
-  - [Example6](#example6)
-- [Resources](#resources)
-  - [Extra Resources](#extra-resources)
-- [Read this if you are a beginner](#read-this-if-you-are-a-beginner)
-- [Why I Created this](#why-i-created-this)
-- [How I use this Package](#how-i-use-this-package)
-- [Extra Info](#extra-info)
-- [Source Code](#source-code)
-  - [index.js](#indexjs)
-  - [package.json](#packagejson)
 
 When I was starting a new project, I used the 'create vite app' command. Then, I began to remove and add files for the project. It struck me that I could create it once and paste it everywhere when I start a new project. Thats how I started building this.
 
@@ -85,7 +90,7 @@ To begin, open a terminal at the desired project location and run this command
 init
 ```
 
-##### Example1
+##### Example
 
 ![init](./images/init.png)
 
@@ -97,7 +102,7 @@ This displays all available templates from the template folder, listed by folder
 init -a "C:\Users\{User}\Desktop\Projects\Ongoing Projects"
 ```
 
-##### Example2
+##### Example
 
 ![init](./images/init%20-a.png)
 
@@ -113,7 +118,7 @@ _But for reason you want to create a template with `node_modules` folder you wil
 init -a "O:\test\cliTest" -y
 ```
 
-##### Example3
+##### Example
 
 ![init](./images/init%20-y.png)
 
@@ -123,7 +128,7 @@ init -a "O:\test\cliTest" -y
 init -r "template name"
 ```
 
-##### Example4
+##### Example
 
 ![init](./images/init%20-r.png)
 
@@ -135,7 +140,7 @@ _(Note: The name must match exactly.)_
 init -c "https://github.com/user/repoitoryName.git"
 ```
 
-##### Example5
+##### Example
 
 ![init](./images/init%20-c.png)
 
@@ -156,7 +161,7 @@ The reason it performs all these steps is because I attempted to accomplish it i
 init -h
 ```
 
-##### Example6
+##### Example
 
 ![init](./images/init%20-h.png)
 
