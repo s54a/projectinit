@@ -1,3 +1,25 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [@s54a/init || TempLate CLI || Project Initializer](#s54ainit--template-cli--project-initializer)
+  - [How it Works](#how-it-works)
+  - [Video Tutorial](#video-tutorial)
+  - [Folder Structure](#folder-structure)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Resources](#resources)
+      - [These are the YouTube Videos & Article which helped me build this](#these-are-the-youtube-videos--article-which-helped-me-build-this)
+  - [Read this if you are a begginer](#read-this-if-you-are-a-begginer)
+  - [Why I Created this](#why-i-created-this)
+  - [How I use this Package](#how-i-use-this-package)
+  - [Extra Info](#extra-info)
+  - [Source Code](#source-code)
+    - [index.js](#indexjs)
+    - [package.json](#packagejson)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # @s54a/init || TempLate CLI || Project Initializer
 
 When I was starting a new project, I used the 'create vite app' command. Then, I began to remove and add files for the project. It struck me that I could create it once and paste it everywhere when I start a new project. Thats how I started building this.
