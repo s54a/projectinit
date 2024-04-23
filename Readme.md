@@ -230,7 +230,7 @@ Here is the difference
 ![size difference](./images/big.png)
 ![size difference](./images/small.png)
 
-**So the Package Size is reduced by 300 Kilo Bytes**
+**So the Packa`ge Size is reduced by 300 Kilo Bytes**
 
 ## Source Code
 
