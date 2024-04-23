@@ -17,7 +17,7 @@
     - [Example](#example-5)
   - [Resources](#resources)
     - [These are the YouTube Videos & Article which helped me build this](#these-are-the-youtube-videos--article-which-helped-me-build-this)
-  - [Read this if you are a begginer](#read-this-if-you-are-a-begginer)
+  - [Read this if you are a beginner](#read-this-if-you-are-a-beginner)
   - [Why I Created this](#why-i-created-this)
   - [How I use this Package](#how-i-use-this-package)
   - [Extra Info](#extra-info)
@@ -169,7 +169,7 @@ init -h
 
 #### These are the YouTube Videos & Article which helped me build this
 
-[![The Articel Link](./images/article.png)](https://medium.com/northcoders/creating-a-project-generator-with-node-29e13b3cd309)
+[![The Article Link](./images/article.png)](https://medium.com/northcoders/creating-a-project-generator-with-node-29e13b3cd309)
 
 [![The Video Link](https://img.youtube.com/vi/xYko2bHNgVA/0.jpg)](https://www.youtube.com/watch?v=xYko2bHNgVA)
 
@@ -177,7 +177,7 @@ init -h
 
 & ChatGPT
 
-This a similer project built with Typescript
+This a similar project built with Typescript
 https://github.com/pongsatt/mycli/blob/master/src/index.ts
 
 Extra Resources
@@ -185,9 +185,9 @@ https://github.com/lirantal/nodejs-cli-apps-best-practices
 
 Take a look at https://yeoman.io/generators/
 
-## Read this if you are a begginer
+## Read this if you are a beginner
 
-I asked one of my friend who is a begginer in Web Dev. She asked me a question how will I make templates or why use this instead of **Copy Pasting**
+I asked one of my friend who is a beginner in Web Dev. She asked me a question how will I make templates or why use this instead of **Copy Pasting**
 
 So when ever you do
 
@@ -240,7 +240,7 @@ When you will advance to React you will do
 
 So every time you will do that you will have to remove files edit content of the files.
 
-So I thought it is a hassel so lets just do it once and I wil copy & paste it every time whenever I start a new project.
+So I thought it is a hassle so lets just do it once and I wil copy & paste it every time whenever I start a new project.
 
 Then I thought I can create a cli which does that for me & I started building this package.
 
@@ -248,7 +248,7 @@ Then on a suggestion of a friend I also added the Clone & Create Template from G
 
 ## How I use this Package
 
-I use this Package whenever I start a new porject.
+I use this Package whenever I start a new project.
 
 I have created my own template and added them as templates using `init -a "folder path"` command.
 
@@ -261,7 +261,7 @@ So if you are a Freelancer or Someone who is learning to code, or starting a new
 ## Extra Info
 
 While Deploying Packages on NPM I realized that whatever you have in your project will get included even if you use npm ignore.
-I dont know if npm ignore works or failed.
+I don't know if npm ignore works or failed.
 So I created another branch of this project in which I removed images and extra files.
 To reduce the size of the package & the node_modules size.
 
@@ -270,11 +270,11 @@ Here is the difference
 ![size difference](./images/big.png)
 ![size difference](./images/small.png)
 
-**So the Pacakge Size is reduced by 300 Kilo Bytes**
+**So the Package Size is reduced by 300 Kilo Bytes**
 
 ## Source Code
 
-Every time when I look at the open source I feel it is a hassel to navigate around files to see the code.
+Every time when I look at the open source I feel it is a hassle to navigate around files to see the code.
 
 And this project source code is in a single file.
 
